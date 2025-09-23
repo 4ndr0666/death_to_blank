@@ -1,4 +1,10 @@
-importScripts("./lib/URI.min.js");
+# GEMINI.md
+
+Implement the following corrected background.js:
+
+```javascript:background.js
+
+import './lib/URI.min.js';
 
 const c_enabledIcons = {
 
@@ -174,7 +180,7 @@ const processedExceptions = exceptions
 
 .filter(e => e !== "")
 
-.map(e => e.replace(/[.*+?^${}()|[\\]/g, '\\$&'))
+.map(e => e.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
 
 .map(e => new RegExp("(.|^)" + e + "$"));
 
@@ -323,3 +329,5 @@ invalidateStorageCache(changedKeys);
 });
 
 updateButtonState().catch(console.error);
+
+`
