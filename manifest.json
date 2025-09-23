@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Death To _blank",
+    "version": "2.2.0",
+    "description": "Secures links that open new tabs by automatically adding `rel='noopener noreferrer'`.",
+    "icons": {
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Death To _blank",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "24": "images/icon24.png",
+            "32": "images/icon32.png"
+        }
+    },
+    "content_scripts": [{
+        "run_at": "document_start",
+        "all_frames": true,
+        "matches": ["http://*/*", "https://*/*", "ftp://*/*", "file://*/*"],
+        "js": ["content_script.js"]
+    }],
+    "options_page": "options.html",
+    "permissions": [
+      "storage"
+    ]
+}
