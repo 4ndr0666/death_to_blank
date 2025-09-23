@@ -44,7 +44,7 @@
 
 "all_frames": true,
 
-"matches": ["http:///", "https:///", "ftp:///", "file:///"],
+"matches": ["http:///", "https:///"],
 
 "js": ["content_script.js"]
 
