@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Death To _blank",
+    "name": "Death_To_blank",
     "version": "2.2.0",
     "description": "Secures links that open new tabs by automatically adding `rel='noopener noreferrer'`.",
     "icons": {
