@@ -16,7 +16,6 @@ await chrome.storage.sync.set({
 exceptions: exceptions,
 isWhitelist: document.getElementById("exceptionType").value === "whitelist",
 filterForms: document.getElementById("filterForms").checked,
-rewrittenTarget: document.getElementById("rewrittenTarget").value,
 enabled: document.getElementById("enabled").checked
 });
 
@@ -66,10 +65,10 @@ return errors;
 async function restore_options() {
 try {
 const result = await chrome.storage.sync.get(
-["exceptions", "isWhitelist", "filterForms", "rewrittenTarget", "enabled"]
+["exceptions", "isWhitelist", "filterForms", "enabled"]
 );
 
-const {exceptions, isWhitelist, filterForms, rewrittenTarget, enabled} = result;
+const {exceptions, isWhitelist, filterForms, enabled} = result;
 
 if (exceptions !== undefined) {
 document.getElementById("exceptions").value = exceptions.join("\n");
@@ -82,10 +81,6 @@ document.getElementById("exceptionType").value = exceptionType;
 
 if (filterForms !== undefined) {
 document.getElementById("filterForms").checked = filterForms;
-}
-
-if (rewrittenTarget !== undefined) {
-document.getElementById("rewrittenTarget").value = rewrittenTarget;
 }
 
 if (enabled !== undefined) {

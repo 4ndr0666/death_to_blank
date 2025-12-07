@@ -22,7 +22,7 @@
         "run_at": "document_start",
         "all_frames": true,
         "matches": ["http://*/*", "https://*/*"],
-        "js": ["content_script.js"]
+        "js": ["lib/URI.min.js", "content_script.js"]
     }],
     "options_page": "options.html",
     "permissions": [
